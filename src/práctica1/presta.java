@@ -24,7 +24,7 @@ public class presta extends Libro{
             else   {
         super.setCont(n-lp);
         np+=lp;
-        
+        System.out.println("Transacción exitosa: ");
         dp=0;
         prestado=1;
         }
@@ -44,9 +44,11 @@ public class presta extends Libro{
         keyb.nextLine();
         n=super.getCont();
         if((n+dp)>np) System.out.println("Cantidad de libros prestados excedida");
-        else    super.setCont(n+dp);
-        np-=dp;
-        
+        else    {
+            System.out.println("Libro devuelto");
+            super.setCont(n+dp);
+            np-=dp;
+        }
         }
     public void libprestado(){
         System.out.println("Nombre: "+super.getName()+"   Cantidad: "+np);
